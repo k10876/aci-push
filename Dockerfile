@@ -31,4 +31,4 @@ WORKDIR /home/coder
 CMD ["sh", "-c", "/usr/local/bin/watchdog.sh & code-server --auth none --bind-addr 0.0.0.0:80"]
 
 # Expose port 443
-EXPOSE 443
+EXPOSE 80
