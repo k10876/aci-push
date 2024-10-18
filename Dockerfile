@@ -21,7 +21,7 @@ ADD watchdog.sh /usr/local/bin/watchdog.sh
 RUN chmod +x /usr/local/bin/watchdog.sh
 
 # Start watchdog script and code-server
-CMD ["sh", "-c", "/usr/local/bin/watchdog.sh & code-server --auth none --bind-addr 0.0.0.0:443"]
+CMD ["sh", "-c", "/usr/local/bin/watchdog.sh & code-server --auth none --bind-addr 0.0.0.0:80"]
 
 # Expose port 443
 EXPOSE 443
