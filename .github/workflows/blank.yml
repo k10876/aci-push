@@ -17,8 +17,9 @@ jobs:
         - name: build the docker image
           id: build-docker-image
           run: |
-            ls -la 
-            docker build . -f Dockerfile -t lulasakamoto204/coder-anaconda3-ipython:latest
+            docker build -t coder-anaconda-python3 .
+            docker tag coder-anaconda-python3 lulasakamoto204/coder-anaconda-python3:latest
+            docker push lulasakamoto204/coder-anaconda-python3:latest
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/coder-anaconda3-ipython:latest
