@@ -3,13 +3,13 @@ FROM continuumio/anaconda3:latest
 # Create a non-root user named 'coder' and set the home directory
 RUN useradd -ms /bin/bash coder
 
+# Install code-server
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://code-server.dev/install.sh | sh --prefix /usr/local
+
 # Switch to 'coder' user
 USER coder
 WORKDIR /home/coder
-
-# Install code-server
-RUN apt-get update && apt-get install -y curl && \
-    curl -fsSL https://code-server.dev/install.sh | sh
 
 # Set the working directory
 WORKDIR /home/coder/
