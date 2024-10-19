@@ -5,7 +5,7 @@ RUN useradd -ms /bin/bash coder
 
 # Install code-server
 RUN apt-get update && apt-get install -y curl && \
-    curl -fsSL https://code-server.dev/install.sh | sh --prefix /usr/local
+    curl -fsSL https://code-server.dev/install.sh | sh -s -- --prefix /usr/local
 
 # Switch to 'coder' user
 USER coder
